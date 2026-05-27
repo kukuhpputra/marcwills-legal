@@ -2,8 +2,7 @@
 
 **Last updated:** May 27, 2026
 **Developer:** Kukuh Pambuka Putra
-**Institution:** Universitas Kristen Satya Wacana (UKSW), Salatiga, Indonesia
-**Contact:** [your email here]
+**Contact:** kukuh.pambuka@outlook.com
 
 ---
 
@@ -97,11 +96,11 @@ You may not:
 ## 8. Intellectual Property
 
 The App, including its design, algorithms, visualizations, and documentation,
-is the intellectual property of Kukuh Pambuka Putra / Universitas Kristen Satya
-Wacana. All rights are reserved.
+is the intellectual property of Kukuh Pambuka Putra. All rights are reserved.
 
-The name "MARCWILLS" (Mount ARGa WILLis) and "MARCWILLS HRVA" are used as
-identifiers for this software platform and application.
+The name "MARCWILLS" (Mount ARGa WILLis) and "MARCWILLS HRVA" are trademarks
+and identifiers of the MARCWILLS physiological monitoring platform owned by
+Kukuh Pambuka Putra.
 
 ---
 
@@ -178,12 +177,9 @@ of the courts of Indonesia.
 For questions about these Terms and Conditions, contact:
 
 **Kukuh Pambuka Putra**
-Assistant Professor, Sport Science and Exercise Physiology
-Universitas Kristen Satya Wacana (UKSW)
-Salatiga, Central Java, Indonesia
-Email: [your email here]
+Developer, MARCWILLS
+Email: kukuh.pambuka@outlook.com
 
 ---
 
-*MARCWILLS HRVA is developed for academic and research purposes.*
-*This app is part of the MARCWILLS physiological monitoring platform.*
+*MARCWILLS HRVA is part of the MARCWILLS physiological monitoring platform.*
