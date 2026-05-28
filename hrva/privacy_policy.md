@@ -50,7 +50,7 @@ The App calculates and stores HRV metrics derived from the above data:
 All collected data is used solely for the following purposes:
 - Displaying real-time physiological metrics during a recording session
 - Storing session records for later review and export
-- Generating HRV analysis reports compatible with KubiosHRV Desktop software
+- Generating HRV analysis reports compatible with third-party HRV analysis software software
 
 The App does not use your data for advertising, profiling, or any purpose other
 than the research workflow described above.
@@ -80,7 +80,7 @@ the developer has no involvement in or access to exported files.
 
 Exported file formats:
 - **CSV files** (hr.csv, acc.csv, hrv_rolling.csv): comma-separated physiological data
-- **KubiosHRV format** (rr.txt): RR intervals in plain text for import into KubiosHRV Desktop
+- **plain-text RR interval format (.txt)** (rr.txt): RR intervals in plain text for import into third-party HRV analysis software
 
 ---
 
