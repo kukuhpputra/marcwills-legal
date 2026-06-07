@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — MARCWILLS HRVA</title>
+<style>
+:root {
+  --navy: #0a0a18; --cyan: #00d4ff; --text: #1a1a2e;
+  --secondary: #6e6e8e; --border: #e8e8f0; --bg: #f8f8fc;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Georgia','Times New Roman',serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; }
+.header { background: var(--navy); padding: 20px 24px; display: flex; align-items: flex-start; justify-content: space-between; }
+.logo-left { display: flex; align-items: center; gap: 10px; }
+.logo-mark { width: 32px; height: 32px; border-radius: 7px; background: rgba(0,212,255,0.12); border: 1px solid rgba(0,212,255,0.35); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: var(--cyan); letter-spacing: 0.5px; font-family: 'Helvetica Neue',sans-serif; }
+.logo-text .title { font-size: 13px; font-weight: 600; color: var(--cyan); letter-spacing: 3px; font-family: 'Helvetica Neue',sans-serif; }
+.logo-text .sub { font-size: 9px; color: rgba(255,255,255,0.35); letter-spacing: 2.5px; font-family: 'Helvetica Neue',sans-serif; }
+.header-right { text-align: right; font-family: 'Helvetica Neue',sans-serif; }
+.header-right .doc-type { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; color: var(--cyan); opacity: 0.80; }
+.header-right .updated { font-size: 9px; color: rgba(255,255,255,0.35); margin-top: 3px; }
+.container { max-width: 720px; margin: 0 auto; padding: 32px 24px 60px; }
+h1 { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+.doc-meta { font-size: 12px; color: var(--secondary); font-family: 'Helvetica Neue',sans-serif; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+h2 { font-size: 11px; font-weight: 600; color: var(--text); letter-spacing: 1.5px; text-transform: uppercase; background: #f0f0f8; padding: 5px 10px; border-left: 3px solid var(--cyan); margin: 24px 0 10px; font-family: 'Helvetica Neue',sans-serif; }
+h3 { font-size: 14px; font-weight: 600; color: var(--text); margin: 14px 0 6px; }
+p { margin-bottom: 10px; }
+ul, ol { margin: 8px 0 10px 20px; }
+li { margin-bottom: 4px; }
+strong { font-weight: 700; }
+.summary-box { background: #eaf8f0; border: 1px solid #34c759; border-left: 4px solid #34c759; border-radius: 6px; padding: 14px 16px; margin: 20px 0; font-size: 14px; }
+.summary-box strong { color: #0f6e56; }
+hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+.footer { background: var(--navy); padding: 14px 24px; text-align: center; font-size: 10px; color: rgba(255,255,255,0.25); font-family: 'Helvetica Neue',sans-serif; line-height: 1.8; }
+a { color: var(--text); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo-left">
+    <div class="logo-mark">MW</div>
+    <div class="logo-text">
+      <div class="title">MARCWILLS</div>
+      <div class="sub">H R V A</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="doc-type">PRIVACY POLICY</div>
+    <div class="updated">Last updated: June 7, 2026</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <h1>Privacy Policy</h1>
+  <div class="doc-meta">
+    Developer: Kukuh Pambuka Putra &nbsp;·&nbsp;
+    MARCWILLS HRVA v2.1.0 &nbsp;·&nbsp;
+    Effective: June 7, 2026
+  </div>
+
+  <div class="summary-box">
+    <strong>Summary:</strong> All data collected by this App is stored exclusively 
+    on your device. No data is transmitted to external servers, third parties, 
+    or the developer.
+  </div>
+
+  <h2>1. Overview</h2>
+  <p>MARCWILLS HRVA ("the App") is a heart rate variability (HRV) analyzer for 
+  sport science research and wellness monitoring. This Privacy Policy explains what 
+  data the App collects, how it is used, and how it is stored.</p>
+
+  <h2>2. Data We Collect</h2>
+
+  <h3>2.1 Subject Information</h3>
+  <p>When you register a research subject, the App collects:</p>
+  <ul>
+    <li>Name or anonymized subject code</li>
+    <li>Age</li>
+    <li>Biological sex (Male / Female)</li>
+    <li>Resting heart rate (measured within the App or entered manually)</li>
+  </ul>
+  <p>This information is stored in a local SQLite database on your device.</p>
+
+  <h3>2.2 Physiological Data</h3>
+  <p>During a recording session, the App collects the following data from a Polar H10 
+  chest belt sensor via Bluetooth:</p>
+  <ul>
+    <li>Heart rate (bpm)</li>
+    <li>RR intervals (ms) — beat-to-beat intervals used for HRV analysis</li>
+    <li>ECG waveform (raw electrical signal at 130 Hz) — displayed only, not exported</li>
+    <li>Accelerometer data (X, Y, Z axes in mg) — for motion detection and activity monitoring</li>
+  </ul>
+  <p>This data is stored as local files in the App's private document folder on your device.</p>
+
+  <h3>2.3 Session Configuration Data</h3>
+  <p>In Activity Mode, the App additionally records:</p>
+  <ul>
+    <li>Target intensity settings (Karvonen % HRR, tolerance, intensity standard)</li>
+    <li>Heart rate zone adherence data (time in range, underload, overload)</li>
+    <li>Notification preferences for the session</li>
+  </ul>
+  <p>This configuration is saved in a <code>karvonen_config.md</code> file within the session folder.</p>
+
+  <h3>2.4 Derived Metrics</h3>
+  <p>The App calculates and stores HRV metrics derived from the above data:</p>
+  <ul>
+    <li>RMSSD, SDNN, pNN50, Mean RR</li>
+    <li>SD1, SD2, SD1/SD2 ratio (Poincaré plot parameters)</li>
+    <li>ln(RMSSD), lnRMSSD/mRR (log-transformed HRV indices)</li>
+    <li>LF Power, HF Power, LF/HF ratio, Total Power (frequency-domain, Stationary Mode only)</li>
+  </ul>
+
+  <h2>3. How We Use Your Data</h2>
+  <p>All collected data is used solely for the following purposes:</p>
+  <ul>
+    <li>Displaying real-time physiological metrics during a recording session</li>
+    <li>Storing session records for later review and export</li>
+    <li>Generating HRV analysis reports and session summaries</li>
+    <li>Providing intensity guidance feedback in Activity Mode</li>
+  </ul>
+  <p>The App does not use your data for advertising, profiling, or any purpose other 
+  than the research or wellness workflow described above.</p>
+
+  <h2>4. Data Storage</h2>
+  <p>All data is stored <strong>locally on your device</strong> in:</p>
+  <ul>
+    <li>A SQLite database file (<code>sdms.db</code>) in the App's private storage</li>
+    <li>Session folders in the App's document directory, named in the format:<br>
+    <code>SubjectName_YYYY-MM-DD_HHMMSS_stationary/</code> or <code>_activity/</code></li>
+  </ul>
+  <p>The developer does not have access to this data. The data is not backed up to 
+  any cloud service by the App itself.</p>
+
+  <h2>5. Session Output Files</h2>
+  <p>Each session produces the following local files:</p>
+
+  <h3>Stationary Mode</h3>
+  <ul>
+    <li><code>hr_log.csv</code> — timestamped heart rate log</li>
+    <li><code>rr_log.csv</code> — RR interval log</li>
+    <li><code>acc_log.csv</code> — accelerometer data log</li>
+    <li><code>hrv_rolling.csv</code> — per-minute HRV snapshot (16 columns)</li>
+    <li><code>session_methods.md</code> — analysis method documentation</li>
+  </ul>
+
+  <h3>Activity Mode</h3>
+  <p>All files above, plus:</p>
+  <ul>
+    <li><code>activity_log.csv</code> — per-beat intensity status log</li>
+    <li><code>karvonen_config.md</code> — session Karvonen configuration</li>
+  </ul>
+
+  <h2>6. Data Sharing and Export</h2>
+  <p>The App does not automatically share any data with third parties. You may choose 
+  to export session data using Android's Share Sheet. This export is entirely 
+  user-initiated and the developer has no involvement in or access to exported files.</p>
+
+  <h2>7. Permissions</h2>
+
+  <h3>Bluetooth (BLUETOOTH_SCAN, BLUETOOTH_CONNECT)</h3>
+  <p>Required to scan for and connect to the Polar H10 sensor via Bluetooth Low Energy. 
+  No Bluetooth data is transmitted to external servers.</p>
+
+  <h3>Location (ACCESS_FINE_LOCATION)</h3>
+  <p>Android requires this permission for BLE scanning on Android 6.0 and above. 
+  The App does not collect, use, or store your geographic location.</p>
+
+  <h3>Vibration (VIBRATE)</h3>
+  <p>Used to provide intensity feedback notifications during Activity Mode sessions 
+  (underload and overload alerts). This is a normal Android permission and does not 
+  require user confirmation at runtime.</p>
+
+  <h2>8. Data Retention and Deletion</h2>
+  <p>You are in full control of your data:</p>
+  <ul>
+    <li><strong>Delete a session:</strong> Use the delete button in the Session screen. 
+    All session files are permanently removed.</li>
+    <li><strong>Discard after recording:</strong> Choosing "Discard" after stopping a 
+    session permanently deletes all files from that session.</li>
+    <li><strong>Delete a subject:</strong> Removes all sessions and files associated 
+    with that subject.</li>
+    <li><strong>Uninstall the App:</strong> Removes all App data from your device.</li>
+  </ul>
+
+  <h2>9. Children's Privacy</h2>
+  <p>This App is intended for use by researchers and professionals aged 18 and above. 
+  When subjects include minors, the researcher is responsible for obtaining appropriate 
+  informed consent in accordance with applicable laws and institutional ethics guidelines.</p>
+
+  <h2>10. Security</h2>
+  <p>All data is stored in the App's private storage directory, which is not accessible 
+  to other apps on your device (standard Android sandboxing).</p>
+
+  <h2>11. Changes to This Privacy Policy</h2>
+  <p>This Privacy Policy may be updated from time to time. Any changes will be reflected 
+  in the "Last updated" date at the top of this document.</p>
+
+  <hr>
+
+  <h2>Contact</h2>
+  <p>For questions or concerns about this Privacy Policy, contact:<br>
+  <strong>Kukuh Pambuka Putra</strong><br>
+  Developer, MARCWILLS<br>
+  Email: kukuh.pambuka@outlook.com</p>
+
+</div>
+
+<div class="footer">
+  © 2026 Kukuh Pambuka Putra. All rights reserved.<br>
+  MARCWILLS HRVA v2.1.0 &nbsp;·&nbsp; Developed with AI coding assistance (Claude, Anthropic)<br>
+  <a href="terms_and_conditions" style="color:rgba(255,255,255,0.30)">Terms &amp; Conditions</a>
+  &nbsp;·&nbsp;
+  <a href="disclaimer" style="color:rgba(255,255,255,0.30)">Medical Disclaimer</a>
+</div>
+
+</body>
+</html>
