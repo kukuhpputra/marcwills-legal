@@ -1,6 +1,6 @@
 # Privacy Policy — MARCWILLS HRVA
 
-**Last updated:** May 27, 2026
+**Last updated:** August 23, 2026
 **Developer:** Kukuh Pambuka Putra
 **Contact:** kukuh.pambuka@outlook.com
 
@@ -21,10 +21,17 @@ No data is transmitted to external servers, third parties, or the developer.
 
 ### 2.1 Subject Information
 When you register a research subject, the App collects:
-- Name or anonymized subject code
+- Subject code (mandatory)
+- Name (optional)
 - Age
 - Biological sex (Male / Female)
 - Resting heart rate (measured within the App)
+
+The subject code is a mandatory anonymization identifier. It is designed to let
+you refer to a research subject without recording their name, supporting
+research protocols that require de-identified or pseudonymized data. If your
+research protocol requires full anonymization, we recommend using the subject
+code as the primary identifier and leaving the name field blank.
 
 This information is stored in a local SQLite database on your device.
 
@@ -35,6 +42,11 @@ chest belt sensor via Bluetooth:
 - RR intervals (ms) — beat-to-beat intervals used for HRV analysis
 - ECG waveform (raw electrical signal at 130 Hz) — displayed only, not exported
 - Accelerometer data (X, Y, Z axes in mg) — for motion artifact detection
+- Polar H10 device ID — a hardware identifier for the sensor itself, used to
+  record which physical device was used for a session
+
+The Polar device ID identifies the sensor hardware, not the person wearing it.
+It is not human personal data.
 
 This data is stored as local files in the App's private document folder on your device.
 
@@ -42,6 +54,17 @@ This data is stored as local files in the App's private document folder on your 
 The App calculates and stores HRV metrics derived from the above data:
 - RMSSD, SDNN, pNN50, Mean RR
 - SD1, SD2, SD1/SD2 ratio (Poincaré plot parameters)
+
+### 2.4 Session Notes
+The App allows you to attach a free-text note to a recording session (e.g., to
+record contextual observations about that session). This field is not
+validated, filtered, or restricted by the App in any way — any text you enter
+is stored exactly as typed.
+
+Because the App does not inspect or restrict the content of this field, **you
+are responsible for what you write in a session note**. If your research
+protocol requires full anonymization of subject data, do not enter the
+subject's name or other directly identifying information in a session note.
 
 ---
 
