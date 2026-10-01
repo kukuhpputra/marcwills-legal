@@ -47,7 +47,7 @@ a { color: var(--text); }
   </div>
   <div class="header-right">
     <div class="doc-type">PRIVACY POLICY</div>
-    <div class="updated">Last updated: August 23, 2026</div>
+    <div class="updated">Last updated: October 1, 2026</div>
   </div>
 </div>
 
@@ -56,14 +56,15 @@ a { color: var(--text); }
   <h1>Privacy Policy</h1>
   <div class="doc-meta">
     Developer: Kukuh Pambuka Putra &nbsp;·&nbsp;
-    MARCWILLS HRVA v3.0.0 &nbsp;·&nbsp;
-    Effective: August 23, 2026
+    MARCWILLS HRVA v3.2.0 &nbsp;·&nbsp;
+    Effective: October 1, 2026
   </div>
 
   <div class="summary-box">
-    <strong>Summary:</strong> All data collected by this App is stored exclusively
-    on your device. No data is transmitted to external servers, third parties,
-    or the developer.
+    <strong>Summary:</strong> All data collected by this App is stored on your
+    device. The App has no internet access: no data is transmitted to external
+    servers, third parties, or the developer. Data leaves the App only when you
+    export it yourself (see Section 6).
   </div>
 
   <h2>1. Overview</h2>
@@ -132,6 +133,13 @@ a { color: var(--text); }
   research protocol requires full anonymization of subject data, do not enter the
   subject's name or other directly identifying information in a session note.</p>
 
+  <h3>2.6 Session Markers</h3>
+  <p>During a recording you can place markers: numbered events (with an optional
+  free-text description), body-position changes, and analysis-window start/stop.
+  The App also records its own markers (automatic stability transitions and
+  intensity-alert firings). The same responsibility as for session notes applies to
+  what you type into an event description.</p>
+
   <h2>3. How We Use Your Data</h2>
   <p>All collected data is used solely for the following purposes:</p>
   <ul>
@@ -148,8 +156,9 @@ a { color: var(--text); }
   <ul>
     <li>A SQLite database file (<code>sdms.db</code>) in the App's private storage</li>
     <li>Session folders in the App's document directory, named in the format:<br>
-    <code>SubjectName_YYYY-MM-DD_HHMMSS_stationary/</code> or <code>_activity/</code></li>
+    <code>ParticipantCode_date_time_stationary/</code> or <code>_activity/</code></li>
   </ul>
+  <p>Both are in the App's private storage. Copies you export (Section 6) are not.</p>
   <p>The developer does not have access to this data. The data is not backed up to
   any cloud service by the App itself.</p>
 
@@ -158,24 +167,40 @@ a { color: var(--text); }
 
   <h3>Stationary Mode</h3>
   <ul>
-    <li><code>hr_log.csv</code> — timestamped heart rate log</li>
-    <li><code>rr_log.csv</code> — RR interval log</li>
-    <li><code>acc_log.csv</code> — accelerometer data log</li>
-    <li><code>hrv_rolling.csv</code> — per-minute HRV snapshot (16 columns)</li>
+    <li><code>rr.txt</code> — raw RR intervals</li>
+    <li><code>hr.csv</code> — timestamped heart rate log</li>
+    <li><code>acc.csv</code> — accelerometer data log</li>
+    <li><code>hrv_rolling.csv</code> — per-minute HRV snapshot</li>
+    <li><code>session_markers.csv</code> — the session markers of Section 2.6</li>
     <li><code>session_methods.md</code> — analysis method documentation</li>
   </ul>
 
   <h3>Activity Mode</h3>
   <p>All files above, plus:</p>
   <ul>
-    <li><code>activity_log.csv</code> — per-beat intensity status log</li>
+    <li><code>activity_log.csv</code> — per-second intensity status log</li>
     <li><code>karvonen_config.md</code> — session Karvonen configuration</li>
   </ul>
+  <p>A PDF session summary can also be generated. Exported copies are named with the
+  session's identifier (SID), for example <code>SID-hr.csv</code>.</p>
 
   <h2>6. Data Sharing and Export</h2>
-  <p>The App does not automatically share any data with third parties. You may choose
-  to export session data using Android's Share Sheet. This export is entirely
-  user-initiated and the developer has no involvement in or access to exported files.</p>
+  <p>The App does not automatically share any data with third parties. Every export is
+  started by you, and the developer has no involvement in or access to exported
+  files. There are three ways data can leave the App:</p>
+  <ul>
+    <li><strong>Share Sheet:</strong> session files and the PDF summary are handed to
+    an app you choose (e-mail, cloud storage, messaging).</li>
+    <li><strong>Export folder:</strong> if you choose a folder in Settings, every
+    session export is also copied into it, in a sub-folder named with the session's
+    SID. Re-exporting keeps the previous copy under a time-stamped name.</li>
+    <li><strong>Database backup:</strong> Settings → "Export database backup" writes a
+    complete copy of the App's database — including every participant's name, code
+    and details — into the export folder.</li>
+  </ul>
+  <p><strong>Exported files are outside the App's protection.</strong> Other apps
+  with access to your device storage can read them, and they remain on the device
+  until you delete them yourself.</p>
 
   <h2>7. Permissions</h2>
 
@@ -186,6 +211,13 @@ a { color: var(--text); }
   <h3>Location (ACCESS_FINE_LOCATION)</h3>
   <p>Android requires this permission for BLE scanning on Android 6.0 and above.
   The App does not collect, use, or store your geographic location.</p>
+
+  <h3>No storage or internet permission</h3>
+  <p>The App requests no storage permission. The export folder is chosen through
+  Android's own folder picker, which gives the App access to that one folder only;
+  you can choose a different folder at any time in the App's Settings. The App also
+  has no internet
+  permission; the links to these documents open in your browser.</p>
 
   <h3>Vibration (VIBRATE)</h3>
   <p>Used to provide intensity feedback notifications during Activity Mode sessions
@@ -200,9 +232,15 @@ a { color: var(--text); }
     <li><strong>Discard after recording:</strong> Choosing "Discard" after stopping a
     session permanently deletes all files from that session.</li>
     <li><strong>Delete a subject:</strong> Removes all sessions and files associated
-    with that subject.</li>
-    <li><strong>Uninstall the App:</strong> Removes all App data from your device.</li>
+    with that subject from the App.</li>
+    <li><strong>Uninstall the App:</strong> Removes all App data from the App's
+    private storage.</li>
   </ul>
+  <p><strong>Deletion inside the App does not reach exported copies.</strong> Files
+  already shared, copied to the export folder, or contained in a database backup are
+  not deleted when you delete a session or a participant, or uninstall the App. If a
+  participant withdraws from your study, removing those copies is part of your
+  research protocol.</p>
 
   <h2>9. Children's Privacy</h2>
   <p>This App is intended for use by researchers and professionals aged 18 and above.
@@ -210,12 +248,14 @@ a { color: var(--text); }
   informed consent in accordance with applicable laws and institutional ethics guidelines.</p>
 
   <h2>10. Security</h2>
-  <p>All data is stored in the App's private storage directory, which is not accessible
-  to other apps on your device (standard Android sandboxing).</p>
+  <p>Data inside the App is stored in its private storage directory, which is not
+  accessible to other apps on your device (standard Android sandboxing). Exported
+  copies (Section 6) are not covered by this protection.</p>
 
   <h2>11. Changes to This Privacy Policy</h2>
   <p>This Privacy Policy may be updated from time to time. Any changes will be reflected
-  in the "Last updated" date at the top of this document.</p>
+  in the "Last updated" date at the top of this document. When a change is material,
+  the App asks you to read and agree again before it can be used.</p>
 
   <hr>
 
@@ -229,7 +269,7 @@ a { color: var(--text); }
 
 <div class="footer">
   © 2026 Kukuh Pambuka Putra. All rights reserved.<br>
-  MARCWILLS HRVA v3.0.0 &nbsp;·&nbsp; Developed with AI coding assistance (Claude, Anthropic)<br>
+  MARCWILLS HRVA v3.2.0 &nbsp;·&nbsp; Developed with AI coding assistance (Claude, Anthropic)<br>
   <a href="terms_and_conditions" style="color:rgba(255,255,255,0.30)">Terms &amp; Conditions</a>
   &nbsp;·&nbsp;
   <a href="disclaimer" style="color:rgba(255,255,255,0.30)">Medical Disclaimer</a>
