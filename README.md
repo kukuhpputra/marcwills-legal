@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # MARCWILLS Legal Documents
 
 Legal documents for MARCWILLS platform apps.
