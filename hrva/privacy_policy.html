@@ -52,7 +52,7 @@ th { background: #f0f0f8; font-family: 'Helvetica Neue',sans-serif; font-size: 1
   </div>
   <div class="header-right">
     <div class="doc-type">PRIVACY POLICY</div>
-    <div class="updated">Last updated: October 19, 2026</div>
+    <div class="updated">Last updated: November 9, 2026</div>
   </div>
 </div>
 
@@ -61,8 +61,8 @@ th { background: #f0f0f8; font-family: 'Helvetica Neue',sans-serif; font-size: 1
   <h1>Privacy Policy</h1>
   <div class="doc-meta">
     Developer: Kukuh Pambuka Putra &nbsp;·&nbsp;
-    MARCWILLS HRVA v3.4.0 &nbsp;·&nbsp;
-    Effective: October 19, 2026
+    MARCWILLS HRVA v4.0.0 &nbsp;·&nbsp;
+    Effective: November 9, 2026
   </div>
 
   <div class="summary-box">
@@ -81,8 +81,8 @@ th { background: #f0f0f8; font-family: 'Helvetica Neue',sans-serif; font-size: 1
     <li>Name (optional)</li>
     <li>Age</li>
     <li>Biological sex (Male / Female)</li>
-    <li>Training status (Athlete / Sedentary; optional, metadata only — it enters no calculation)</li>
-    <li>Resting heart rate (measured within the App or entered manually)</li>
+    <li>Training status (Athlete / Active / Sedentary; optional, metadata only — it enters no calculation)</li>
+    <li>Resting heart rate (measured within the App, entered manually, or set automatically from your own Stationary session; the App keeps how and when it was obtained and the previous value, so that an automatic update can be undone)</li>
   </ul>
   <p>The subject code is a mandatory anonymization identifier. It is designed to let you refer to a research subject without recording their name, supporting research protocols that require de-identified or pseudonymized data. If your research protocol requires full anonymization, we recommend using the subject code as the primary identifier and leaving the name field blank.</p>
   <p>This information is stored in a local SQLite database on your device.</p>
@@ -126,6 +126,7 @@ th { background: #f0f0f8; font-family: 'Helvetica Neue',sans-serif; font-size: 1
 
   <h3>2.5 Session Notes</h3>
   <p>The App allows you to attach a free-text note to a recording session (e.g., to record contextual observations about that session). This field is not validated, filtered, or restricted by the App in any way — any text you enter is stored exactly as typed.</p>
+  <p>A session note is included in the PDF report and in the database backup. It is not included in the <code>.hrva</code> file.</p>
   <p>Because the App does not inspect or restrict the content of this field, <strong>you are responsible for what you write in a session note</strong>. If your research protocol requires full anonymization of subject data, do not enter the subject's name or other directly identifying information in a session note.</p>
 
   <h3>2.6 Session Markers</h3>
@@ -147,11 +148,12 @@ th { background: #f0f0f8; font-family: 'Helvetica Neue',sans-serif; font-size: 1
   <h3>Where your data is stored</h3>
   <div class="table-wrap"><table>
     <tr><th>Where</th><th>What</th><th>Notes</th></tr>
-    <tr><td><strong>App database</strong> (<code>sdms.db</code>, in the App's private storage on this phone)</td><td>Participants: code, optional name, age, gender, training status. Sessions: date and time, mode, settings (Karvonen target, body position, "Save ECG", disconnect alert), resting/maximum heart rate and how the resting value was obtained, sensor ID, session ID, optional session name and notes. For each session: every RR interval with its status, every heart-rate packet, per-minute HRV values and their validity, markers (including any text you type in a marker description), the activity log, sensor disconnections, signal strength, recording-health counts, sensor battery level, the sensor settings used, sensor details (model, serial number, firmware), the ECG R-peaks and signal-quality index, and the session's methods text. App settings: device tag, export folder, consent date.</td><td>The single source for everything except raw ECG and accelerometer data.</td></tr>
+    <tr><td><strong>App database</strong> (<code>sdms.db</code>, in the App's private storage on this device)</td><td>Participants: code, optional name, age, gender, training status. Sessions: date and time, mode, settings (Karvonen target, body position, "Save ECG", disconnect alert), resting/maximum heart rate, how and when the resting value was obtained and its previous value, sensor ID, session ID, optional session name and notes. For each session: every RR interval with its status, every heart-rate packet, per-minute HRV values and their validity, markers (including any text you type in a marker description), the activity log, sensor disconnections, signal strength, recording-health counts, sensor battery level, the sensor settings used, sensor details (model, serial number, firmware), the ECG R-peaks and signal-quality index, and the session's methods text. App settings: device tag, export folder, consent date.</td><td>The single source for everything except raw ECG and accelerometer data.</td></tr>
     <tr><td><strong>Session files</strong> (one folder per session in the App's private storage; the folder name contains the participant's name if one was entered, otherwise the participant code, plus the date and the mode)</td><td><code>acc.csv</code> (raw accelerometer data) and, when "Save ECG" is on, <code>ecg.csv</code> (raw ECG).</td><td>Since v3.4.0 nothing else is kept as a file. Sessions recorded with earlier versions keep their older files.</td></tr>
     <tr><td><strong>Files created only when you export</strong></td><td>The files listed in Section 5, the summary PDF, and the <code>.hrva</code> file.</td><td>Built at the moment of export in a temporary folder that the App deletes afterwards. They leave the App only where you send them (Section 6). Exported copies are named with the session's identifier (SID), not the folder name.</td></tr>
     <tr><td><strong>Database backup</strong> ("Export database backup", only when you tap it)</td><td>A copy of the whole App database: every participant and every session.</td><td><strong>Does not contain the raw ECG and accelerometer data</strong> (<code>ecg.csv</code>, <code>acc.csv</code>). Keep the session exports too if you need complete sessions. The temporary copy made for the backup is deleted by the App.</td></tr>
     <tr><td><strong>Android / Google backup</strong></td><td>Nothing.</td><td>Since v3.4.0 the App does not take part in Android/Google backup or in device-to-device transfer.</td></tr>
+    <tr><td><strong>iCloud / computer backup (iPhone and iPad)</strong></td><td>The App's data may be included.</td><td>On iOS the App's private data is not excluded from iCloud backups or from backups made to a computer, while those are turned on. Deleting the App does not delete a backup that was already made; if your research protocol requires it, remove such backups yourself.</td></tr>
   </table></div>
   <p><strong>Backups made by earlier versions.</strong> Up to v3.3.x, Android's automatic backup was on by default for the App. If Google backup was switched on for your phone, Android may already have stored a copy of the App's data in your Google account. Updating to v3.4.0 does not delete that copy, and the App cannot reach it. You can delete it yourself in your phone's Google backup settings (the menu differs between phone makers and Android versions).</p>
 
@@ -198,10 +200,10 @@ th { background: #f0f0f8; font-family: 'Helvetica Neue',sans-serif; font-size: 1
   <p>Required to scan for and connect to the Polar H10 sensor via Bluetooth Low Energy. No Bluetooth data is transmitted to external servers.</p>
 
   <h3>Location (ACCESS_FINE_LOCATION)</h3>
-  <p>Android requires location permission for Bluetooth Low Energy scanning on Android 6.0 and above. The App declares only the precise-location permission (ACCESS_FINE_LOCATION); the permission list on your phone may also show the approximate-location permission (ACCESS_COARSE_LOCATION) as granted to the App. The App does not collect, use, or store your geographic location.</p>
+  <p>Android requires location permission for Bluetooth Low Energy scanning on Android 6.0 and above. The App declares only the precise-location permission (ACCESS_FINE_LOCATION); the permission list on your phone may also show the approximate-location permission (ACCESS_COARSE_LOCATION) as granted to the App. The App does not collect, use, or store your geographic location. On iPhone and iPad the App asks only for Bluetooth permission, to find and connect to your sensor; it does not ask for location.</p>
 
   <h3>No storage or internet permission</h3>
-  <p>The App requests no storage permission. The export folder is chosen through Android's own folder picker, which gives the App access to that one folder only; you can choose a different folder at any time in the App's Settings. The App also has no internet permission; the links to these documents open in your browser.</p>
+  <p>The App requests no storage permission. The export folder is chosen through Android's own folder picker (on iPhone and iPad, the system's document picker), which gives the App access to that one folder only; you can choose a different folder at any time in the App's Settings. The App also has no internet permission; the links to these documents open in your browser.</p>
 
   <h3>Vibration (VIBRATE)</h3>
   <p>Used to provide intensity feedback notifications during Activity Mode sessions (underload and overload alerts) and, in both modes, to signal that the sensor has disconnected during a recording (can be switched off per session). This is a normal Android permission and does not require user confirmation at runtime.</p>
@@ -229,7 +231,7 @@ th { background: #f0f0f8; font-family: 'Helvetica Neue',sans-serif; font-size: 1
   <p>Data inside the App is stored in its private storage directory, which is not accessible to other apps on your device (standard Android sandboxing). Exported copies (Section 6) are not covered by this protection.</p>
 
   <h3>Encryption of .hrva files</h3>
-  <p>HRVA can export a session as a single <code>.hrva</code> file. This file is encrypted with industry-standard encryption (AES-256-GCM) using a key built into the HRVA family of applications (HRVA Record, HRVA Workbench). The purpose is to deter casual, unauthorised viewing while the file is shared or stored. It is not designed to prevent access by parties who use HRVA applications, nor by technically skilled parties; it is not a substitute for the researcher's own data-protection measures. <code>.hrva</code> files are pseudonymised: participant names and free-text session notes are not included. Event-marker descriptions are included; researchers should not write participant names in them. Per-stream exports (e.g. <code>rr.txt</code>, CSV files) are not encrypted. MARCWILLS does not receive or store research data; the researcher who records and shares the data is responsible for its lawful handling, participant consent, and responding to lawful requests from authorities or reviewers. File integrity is verified with SHA-256 checksums.</p>
+  <p>HRVA can export a session as a single <code>.hrva</code> file. This file is encrypted with industry-standard encryption (AES-256-GCM) using a key built into the HRVA family of applications (HRVA, HRVA Workbench). The purpose is to deter casual, unauthorised viewing while the file is shared or stored. It is not designed to prevent access by parties who use HRVA applications, nor by technically skilled parties; it is not a substitute for the researcher's own data-protection measures. <code>.hrva</code> files are pseudonymised: participant names and free-text session notes are not included. Event-marker descriptions are included; researchers should not write participant names in them. Per-stream exports (e.g. <code>rr.txt</code>, CSV files) are not encrypted. MARCWILLS does not receive or store research data; the researcher who records and shares the data is responsible for its lawful handling, participant consent, and responding to lawful requests from authorities or reviewers. File integrity is verified with SHA-256 checksums.</p>
   <p>The SHA-256 checksum (<code>SID.hrva.sha256</code>) only shows whether a file has changed; it does not hide its content.</p>
 
   <h2>11. Changes to This Privacy Policy</h2>
@@ -247,7 +249,7 @@ th { background: #f0f0f8; font-family: 'Helvetica Neue',sans-serif; font-size: 1
 
 <div class="footer">
   © 2026 Kukuh Pambuka Putra. All rights reserved.<br>
-  MARCWILLS HRVA v3.4.0 &nbsp;·&nbsp; Developed with AI coding assistance (Claude, Anthropic)<br>
+  MARCWILLS HRVA v4.0.0 &nbsp;·&nbsp; Developed with AI coding assistance (Claude, Anthropic)<br>
   <a href="terms_and_conditions" style="color:rgba(255,255,255,0.30)">Terms &amp; Conditions</a>
   &nbsp;·&nbsp;
   <a href="disclaimer" style="color:rgba(255,255,255,0.30)">Medical Disclaimer</a>
